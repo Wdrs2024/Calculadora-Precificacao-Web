@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+    
+    <title>Calculadora de Precificação</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="app container">
+        <h1>Calculadora de Preços (Margem)</h1>
+
+        <div class="tabs-container">
+            <button class="tab-button active" onclick="showTab('tab-precificacao')">Preço de Venda</button>
+            <button class="tab-button" onclick="showTab('tab-markup')">Detalhe Margem</button>
+        </div>
+
+        <div id="tab-precificacao" class="tab-content active">
+            
+            <div class="input-section">
+                <h3>Fatores Percentuais (%)</h3>
+                
+                <div class="input-group">
+                    <label for="percentual-impostos">Impostos:</label>
+                    <input type="number" id="percentual-impostos" value="15" min="0" max="100" class="percent-input">
+                </div>
+
+                <div class="input-group">
+                    <label for="percentual-despesas">Despesas Operacionais:</label>
+                    <input type="number" id="percentual-despesas" value="20" min="0" max="100" class="percent-input">
+                </div>
+
+                <div class="input-group">
+                    <label for="margem-lucro-desejada">Margem de Lucro Desejada:</label>
+                    <input type="number" id="margem-lucro-desejada" value="25" min="0" max="100" class="percent-input">
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="input-group cost-input">
+                <label for="custo-unitario">Custo Unitário do Produto (R$):</label>
+                <input type="number" id="custo-unitario" value="10.00" min="0" class="money-input">
+            </div>
+
+            <button id="calcular-btn" class="action-button">CONFIRMAR E CALCULAR</button>
+
+            <div class="final-result">
+                <h2>Preço de Venda Sugerido:</h2>
+                <h3 id="resultado">R$ 0,00</h3>
+            </div>
+        </div>
+
+        <div id="tab-markup" class="tab-content">
+            <div class="result-summary">
+                <h4>Detalhamento dos Fatores</h4>
+                
+                <div class="summary-item">
+                    <span>Margem (Fator Multiplicador):</span>
+                    <span id="fator-markup-display" class="highlight-value">0.00</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Soma dos Fatores (%):</span>
+                    <span id="soma-fatores-display" class="highlight-value">0%</span>
+                </div>
+                
+                <p class="summary-note">O preço é calculado multiplicando o Custo Unitário pelo Fator Markup.</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

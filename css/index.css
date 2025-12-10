@@ -158,3 +158,11 @@ h3#resultado {
 .action-button:hover {
     background-color: #1e7e34;
 }
+
+/* Adicione no final do index.css */
+.footer-creditos {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #888;
+}
